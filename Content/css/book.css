@@ -1,0 +1,163 @@
+
+
+
+
+.info-header {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.book-info {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.language-content {
+    top:3.6rem;
+}
+
+
+/*---------------header-start---------------*/
+
+.header {
+    flex-direction: column;
+    width: 100%;
+}
+
+.logo {
+    margin-bottom: 1.5rem;
+}
+
+/*---------------------------------for index page style-----------------------------------*/
+
+
+
+
+
+/*----------------------------------------------------------about us ---------------------------------------------------------------------*/
+
+
+.iconBox {
+    width: 31.50%;
+}
+
+@media screen and (max-width:1024px){
+    .iconBox {
+        width: 45.50%;
+    }
+}
+
+
+/*----------------------------------------------------------products-----------------------------------------------------------------------*/
+
+.tablet-wrapper {
+    width: 100% !important;
+}
+
+.title-box-container {
+    display: none;
+}
+
+/*---------------------------------------------------------single product------------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------human resources----------------------------------------------------------------*/
+
+
+.form-container {
+    overflow: hidden;
+}
+
+.form-title {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.form-title .form-title-text {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.form-title .form-title-img {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-box {
+    width: 90%;
+}
+
+
+/*----------------footer----------------*/
+
+.footer-content {
+    flex-direction: column;
+}
+
+.about {
+    align-items: center;
+}
+
+.about p {
+    display: none;
+}
+
+.about span {
+    padding-left: 10rem;
+}
+
+.links {
+    flex-direction: row;
+    width: 100%;
+    align-items: baseline;
+    justify-content: space-evenly;
+
+}
+
+.links h4 {
+    
+}
+
+.linkhover-wrap{
+    width: 40%;
+}
+
+.social-wrapper {
+    width: 40%;
+    justify-content: center;
+}
+
+.links .social {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-form {
+    padding: 0 6rem;
+}
+
+.footer-content img {
+    width: 30%;
+}
+
+.links .social li a i{
+    margin-right: 1rem;
+}
+
+
+
+
+
+
+
+

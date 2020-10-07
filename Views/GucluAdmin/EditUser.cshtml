@@ -1,0 +1,60 @@
+﻿@using companyproject.Entities
+@model admin_panel
+
+@{
+    ViewBag.Title = "EditUser";
+    Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    if (!Html.ViewData.ModelState.IsValid)
+    {
+        <div class="warning warning">
+            <p>@Html.ValidationSummary()</p>
+        </div>
+    }
+    if (TempData["error"] != null)
+    {
+        <div class="col-md-12">
+            <p class=" alert alert-danger">
+                @TempData["error"]
+            </p>
+        </div>
+    }
+    if (TempData["success"] != null)
+    {
+        <div class="col-md-12">
+            <p class="alert alert-success">
+                @TempData["success"]
+            </p>
+        </div>
+    }
+    <h5>Create User</h5>
+
+    <hr>
+    @Html.HiddenFor(x => x.Id)
+    <div class="user-box">
+        <label for="email">Username :</label>
+        @Html.TextBoxFor(x => x.user_name, new { name = "adminUsername", id = "adminEmail", placeholder = "username" })
+        <p>Please Enter Username!</p>
+    </div>
+
+    <div class="user-box">
+        <label for="email">E-mail :</label>
+        @Html.TextBoxFor(x => x.mail, new { name = "email", id = "adminEmail", placeholder = "email" })
+        <p>Please Enter Mail !</p>
+    </div>
+
+    <div class="user-box">
+        <label for="username">Password :</label>
+        @Html.TextBoxFor(x => x.password, new { name = "password", id = "adminEmail", placeholder = "email", type = "password" })
+
+        <p>Please Enter Password !</p>
+    </div>
+
+    <div class="user-box">
+        <button type="submit" class="addUserButton">Update User</button>
+    </div>
+}
+

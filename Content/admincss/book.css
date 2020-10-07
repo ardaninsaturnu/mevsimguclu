@@ -1,0 +1,87 @@
+html {
+    font-size: 18px;
+}
+
+
+/*-----------------------------------------<login>-------------------------------------------------*/
+
+.login-right form {
+    width: 80%;
+    padding: 1rem 1rem;
+}
+
+
+    .login-right form label input {
+        width: 100%;
+        margin-top: 0.2rem;
+        padding: 0.5rem;
+    }
+
+
+    .login-right form input[type="submit"] {
+        margin-top: 0.5rem;
+    }
+
+
+.remember {
+    margin: 0.5rem 0;
+}
+
+
+/*-----------------------------------------<sidebar>---------------------------------------------*/
+
+
+.sidebar {
+    width: 25%;
+}
+
+
+/*-----------------------------------------</sidebar>---------------------------------------------*/
+
+
+.company-top img {
+    width: 50%;
+}
+
+
+/*-----------------------------------------<content>---------------------------------------------*/
+
+.content {
+    margin-left: 16%;
+}
+
+/*------------------------------<information>---------------------------------*/
+
+.infoheader .form-wrapper label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*---------------------------------<slider>------------------------------------*/
+
+.slider-box * {
+    width: 100%;
+}
+
+
+/*------------------------------<product-list>---------------------------------*/
+
+.productList {
+    width: 100%;
+}
+
+
+.product-card {
+    flex-direction: column;
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+    .product-card * {
+        margin-top: 0.5rem;
+    }
+
+.p-images img {
+    width: 100%;
+}

@@ -1,0 +1,41 @@
+﻿@using companyproject.Entities
+@model List<product_type>
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
+}
+
+<main class="productList">
+
+    <a href="./AddProduct.cshtml"><button class="addProduct"><i class="fas fa-plus mr-2"></i>Add Product</button></a>
+
+    <div class="product-table">
+        <h4>Product Tables</h4>
+        <hr>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <div class="row product-card">
+                    <div class="col-xl-2 p-images"><img src="@item.productPhotoPath"></div>
+                    <div class="col-xl-3"><h5> <strong>@item.product_type_name</strong></h5></div>
+                    <div class="col-xl-6"><p>@item.productNameSub</p></div>
+                    <div class="col-xl-1 icons">
+                        <button class="btn btn-warning editProduct mr-2" data-product-id="@item.Id">
+                        <a href="./EditProduct?Id=@item.Id"><i class="fas fa-edit"></i></a>
+                        </button>
+            
+                        <button class="btn btn-danger deleteProduct" data-product-id="@item.Id">
+                        <a href="./EditProduct.cshtml"><i class="fas fa-trash-alt"></i></a>   
+                        </button>
+                    </div>
+                </div>
+            }
+        }
+
+
+    </div>
+
+</main>
+
+<script src="/Scripts/js/sliderControl.js"></script>

@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+
+@{Html.RenderAction("IndexSlider", "Home"); }
+
+
+<main class="home">
+    <div class="container text-align-center">
+
+
+        <h2>Our Progres</h2>
+        <hr>
+
+        <!----------------------component one-------------------------->
+
+        <div class="home-component animate__animated animate__slideInLeft">
+
+            <div class="home-image">
+                <img src="/images/since1966.png" alt="">
+            </div>
+
+            <div class="home-text">
+                <h4 class="animate__animated animate__zoomIn">We are solving since <strong>1966</strong></h4>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis explicabo adipisci eos tenetur enim, deserunt dolore suscipit consectetur recusandae blanditiis tempore atque voluptates quam consequuntur.
+                </p>
+                <button type="button" class="index-button gray">Read More..</button>
+            </div>
+        </div>
+
+        <!----------------------component two-------------------------->
+
+        <div class="home-component animate__animated animate__slideInRight">
+            <div class="home-text">
+                <h4 class="animate__animated animate__zoomIn">We are solving since <strong>1966</strong></h4>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis explicabo adipisci eos tenetur enim, deserunt dolore suscipit consectetur recusandae blanditiis tempore atque voluptates quam consequuntur.
+                </p>
+                <button type="button" class="index-button gold">Read More..</button>
+            </div>
+            <div class="home-image">
+                <img src="/images/timeismoney.png" alt="">
+            </div>
+        </div>
+
+        <!----------------------component three-------------------------->
+
+        <div class="home-component animate__animated animate__slideInLeft">
+            <div class="home-image">
+                <img src="/images/savingtime.png" alt="">
+            </div>
+
+            <div class="home-text">
+                <h4 class="animate__animated animate__zoomIn">We are solving since <strong>1966</strong></h4>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis explicabo adipisci eos tenetur enim, deserunt dolore suscipit consectetur.
+                </p>
+                <button type="button" class="index-button red">Read More..</button>
+            </div>
+        </div>
+
+
+    </div>
+</main>
+

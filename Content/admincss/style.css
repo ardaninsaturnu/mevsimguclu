@@ -1,0 +1,643 @@
+@font-face {
+
+    font-family: myriadPro;
+    src: url('../../font/MYRIADPRO-REGULAR.OTF');
+
+}
+
+
+@font-face {
+    font-family: myriadSemiBoldPro;
+    src: url('../../font/MYRIADPRO-SEMIBOLD.OTF');
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: myriadPro;
+}
+
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:myriadPro;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+    a:hover {
+        text-decoration: none;
+        color: white;
+    }
+
+li {
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*-----------------------------------------<login>-------------------------------------------------*/
+
+.login {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    align-items: center;
+    background: #41295a; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2F0743, #41295a); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+    .login .login-logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .login .login-left {
+        width: 60%;
+        
+    }
+
+.login-left img {
+    width: 90%;
+}
+
+
+.login .login-right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.login-right .warning {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #f4c136;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: white;
+    border-radius: 0.8rem;
+    font-size: 1rem;
+    color: #2F0743;
+}
+
+.login-right .warning-hide {
+    display: none;
+}
+
+
+.login-right form {
+    width: 70%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: rgb(255, 233, 39) 3px solid;
+    background-color: rgb(228, 228, 228);
+    padding: 2rem;
+    border-radius: 0.8rem;
+}
+
+
+    .login-right form label {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        color: rgb(170, 170, 170);
+        margin-top: 1rem;
+    }
+
+
+        .login-right form label input {
+            width: 100%;
+            margin-top: 0.5rem;
+            padding: 0.8rem;
+            border-radius: 0.4rem;
+            border-style: none;
+        }
+
+
+    .login-right form input[type="submit"] {
+        padding: 0.8rem 2rem !important;
+        margin-top: 1.5rem;
+        border-radius: 0.5rem;
+        border-style: none;
+        background-color: #f4c136;
+        font-weight: 500;
+        cursor: pointer;
+        color: #eee;
+    }
+
+
+.remember {
+    width: 100%;
+    text-align: left;
+    margin: 1rem 0;
+}
+
+    .remember input {
+        margin-right: 0.5rem;
+    }
+
+
+.login-footer {
+    width: 100%;
+    text-align: center;
+}
+
+
+.error {
+    margin-top: 0.5rem;
+    color: crimson;
+}
+
+
+/*-------------------------------------------</login>----------------------------------------------*/
+
+
+.main-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+/*------------------------------<sidebar>--------------------------------*/
+
+.sidebar {
+    width: 16%;
+    height: 100vh;
+    background-color: rgb(173, 173, 173);
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .9)), url('../../images/img1.jpeg');
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    z-index:2;
+}
+
+.hamburger-menu {
+    display: none;
+    width: 0%;
+}
+
+
+    .hamburger-menu .exit {
+        display: none;
+    }
+
+
+.logo {
+    width: 50%;
+}
+
+.company {
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar-list {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.sidebar-list-item {
+    margin: 0.6rem 0.1rem;
+    width: 100%;
+}
+
+    .sidebar-list-item > a {
+        display: block;
+        width: 100%;
+        padding: 0.8rem 0.8rem;
+        color: white;
+        transition: all 1s ease;
+    }
+
+
+        .sidebar-list-item > a > i {
+            color: crimson;
+        }
+
+        .sidebar-list-item > a:hover {
+            background-color: crimson;
+            border-radius: 0.2rem;
+            color: white;
+        }
+
+
+.dropdown-products {
+    display: none;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+    .dropdown-products * {
+        margin: 0.3rem 0;
+    }
+
+.dropdown-header {
+    display: none;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+    .dropdown-header * {
+        margin: 0.3rem 0;
+    }
+
+.drop-list {
+    display: flex;
+    align-items: center;
+}
+
+/*------------------------------</sidebar>--------------------------------*/
+
+
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+/*------------------------------<header>--------------------------------*/
+
+
+.top-navbar {
+    width: 100%;
+    background-color: rgb(243 243 243);
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:1;
+}
+
+    .top-navbar a {
+        color: crimson;
+    }
+
+.company-top {
+    display: none;
+}
+
+.company-top img {
+    width: 50%;
+}
+
+.hamburger-icon {
+    display: none;
+}
+
+
+
+
+/*-----------------------------</header>--------------------------------*/
+
+
+.content {
+    margin-left: 10%;
+    margin-top: 6%;
+    padding: 3rem;
+    overflow: visible;
+}
+
+
+
+/*----------------------------<infoheader>------------------------------*/
+
+.infoheader {
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+    .infoheader .form-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+        .infoheader .form-wrapper label {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .infoheader .form-wrapper label input {
+                border-radius: 0.4rem;
+                padding: 1rem 1rem;
+                margin: 1rem;
+                width: 90%;
+                outline: none;
+                border: 0.1px solid rgb(216, 216, 216);
+            }
+
+            .infoheader .form-wrapper label textarea {
+                border-radius: 0.4rem;
+                padding: 1rem 1rem;
+                margin: 1rem;
+                width: 90%;
+                outline: none;
+                border: 0.1px solid rgb(216, 216, 216);
+            }
+
+/*-------------------------------------</infoheader>-------------------------------------*/
+
+/*---------------------------------------<slider>----------------------------------------*/
+
+.slider {
+    color: rgb(173, 158, 158);
+}
+
+    .slider .form-wrapper {
+        width: 100%;
+        background-color: rgb(235, 234, 234);
+        border-radius: 0.2rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+.slider-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    width: 100%;
+    justify-content: center;
+}
+
+    .slider-box * {
+        margin: 1rem;
+        padding: 0.5rem;
+        width: 70%;
+        outline: none;
+        border: 0.1px solid rgb(216, 216, 216);
+    }
+
+    .slider-box input[type="text"] {
+        border-radius: 0.4rem;
+        padding: 1rem 1rem;
+    }
+
+
+
+.sliderList {
+    margin-top: 5rem;
+}
+
+/*----------------------------------<addproduct>------------------------------------*/
+
+        .addProductPage {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+                .addProductPage h5 {
+                    margin-top: 3rem;
+                }
+
+            .sizes-box {
+                display: flex;
+                padding-bottom: 2rem;
+            }
+
+
+            .addProductPage .form-wrapper {
+                width: 80%;
+                margin: 0 auto;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+            }
+
+    .addProductPage .form-wrapper label {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        margin: 0 auto;
+        font-size: 1rem;
+        color: rgb(143, 143, 143);
+    }
+
+        .addProductPage .form-wrapper label textarea {
+            padding: 1rem 1rem;
+            border: 0.05rem solid rgb(224, 224, 224);
+            border-radius: 0.4rem;
+            margin: 0.5rem;
+            outline-color:gold;
+        }
+
+        .addProductPage .form-wrapper label input {
+            border: 0.05rem solid rgb(223, 219, 219);
+            margin: 0.5rem;
+            border-radius: 0.4rem;
+            padding: 1rem 1rem;
+            outline-color: gold;
+        }
+
+        .addProductPage .addButton {
+            font-weight: 500;
+            padding: 0.5rem 2rem;
+            border-radius: 0.2rem;
+            border: 0rem solid;
+            background-color: gold;
+        }
+
+        .addProductPage input[type="submit"] {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+
+        .form-wrapper .updateButton {
+            width: 30%;
+            padding: 1rem 1.4rem;
+            background-color: #f4c136;
+            margin: 0 auto;
+            border-style: none;
+            border-radius: 0.2rem;
+            outline-color: gold;
+        }
+
+
+
+/*-----------------------------------</addproduct>------------------------------------------*/
+
+
+/*-----------------------------------<productlist>------------------------------------------*/
+
+.productList {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.product-table {
+    padding: 3rem 1rem;
+}
+
+
+.addProduct {
+    padding: 0.8rem 1rem;
+    background-color: #ffd221;
+    border-radius: 0.4rem;
+    border-style: none;
+    cursor: pointer;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background-color: rgb(245, 245, 245);
+    border-radius: 0.4rem;
+    margin-top: 1rem;
+}
+
+    .product-card * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+/*-------<images>--------*/
+
+.p-images {
+    width: 100%;
+    overflow: hidden;
+}
+
+    .p-images img {
+        width: 50%;
+        border-radius: 0.2rem;
+    }
+
+/*-------</images>--------*/
+/*--------<title>---------*/
+
+.product-card p {
+    color: rgb(208 206 206);
+    font-size: 0.8rem;
+}
+
+.product-card h5 {
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+}
+
+.icons > svg {
+    margin-right: 1rem;
+}
+
+
+
+/*--------</title>--------*/
+
+
+
+/*----------------------------------------------</productlist>-------------------------------------------------*/
+
+
+/*------------------------------------------------<settings>---------------------------------------------------*/
+
+
+.userForm {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.user-box {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin: 1rem auto;
+    width: 80%;
+}
+
+    .user-box label {
+        color: #adadad;
+    }
+
+    .user-box input {
+        width: 80%;
+        padding: 1rem;
+        border: 1px solid rgb(221, 221, 221);
+        border-radius: 0.2rem;
+        outline-color:gold;
+    }
+
+        .user-box input::placeholder {
+            color: rgb(200, 199, 199);
+        }
+
+
+.addUserButton {
+    width: 80%;
+    padding: 0.6rem;
+    background-color: #f4c136;
+    border-radius: 0.2rem;
+    border-style: none;
+    cursor: pointer;
+}
+
+.userList {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 5rem 0;
+}
+
+
+/*------------------------------------<contact form list >---------------------------------------*/
+
+
+.contactForm {
+    margin-bottom: 5rem;
+}

@@ -1,0 +1,97 @@
+﻿@using companyproject.Entities
+@model List<job_application_form>
+
+@{
+    ViewBag.Title = "HumanResource";
+    Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th class="th-sm">
+                    Name Surname
+
+                </th>
+                <th class="th-sm">
+                    Position
+
+                </th>
+                <th class="th-sm">
+                    E-Mail
+
+                </th>
+                <th class="th-sm">
+                    Phone
+
+                </th>
+                <th class="th-sm">
+                    Birth date
+
+                </th>
+                <th class="th-sm">
+                    CV
+
+                </th>
+                <th class="th-sm">
+                    Delete
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@(item.name+" "+item.surname)</td>
+                    <td>@item.position</td>
+                    <td>@item.email</td>
+                    <td>@item.phone</td>
+                    <td>@item.birth_date</td>
+                    <td>
+                        <a href="@item.cvPath" class="btn btn-primary"><span class="fas fa-download"></span> Download</a>
+                    </td>
+                    <td>
+                        <button><i class="far fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                    Name Surname
+                </th>
+                <th>
+                    Position
+                </th>
+                <th>
+                    E-Mail
+                </th>
+                <th>
+                    Phone
+                </th>
+                <th>
+                    Birth date
+                </th>
+                <th>
+                    CV
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+
+
+}
+else
+{
+    <div class="alert alert-info">
+        <p>Empty</p>
+    </div>
+}

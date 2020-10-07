@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="admin Dashboard">
+
+    <title>@ViewBag.Title</title>
+
+    <link rel="title icon" href="/images/title-img.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+    <link href="/Content/admincss/style.css" rel="stylesheet" />
+
+    <!---------------------for book----------------------------->
+
+    <link href="/Content/admincss/book.css" media="(max-width:1366px)" rel="stylesheet" />
+
+    <!--------------------for tablet--------------------------->
+
+    <link href="/Content/admincss/tablet.css" media="(max-width:768px)" rel="stylesheet" />
+
+    <!--------------------for mobile--------------------------->
+
+    <link href="/Content/admincss/mobile.css" media="(max-width:500px)" rel="stylesheet" />
+
+    <title>Admin Dashboard</title>
+
+    <!---------------------scripts----------------------------->
+
+    <script src="/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="/Scripts/popper.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    
+
+
+
+</head>
+<body>
+
+    <div class="main-wrapper">
+
+
+
+        <!------------------------------------------<sidebar>----------------------------------------->
+
+        <nav class="sidebar" id="sidebar-nav">
+
+            <div class="siderbar-logo">
+                <a href="www.workuptogether.com" target="_blank" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">
+                    <img src="http://www.guclucadir.com.tr/images/guclu-logo-tr.png" class="logo">
+                </a>
+            </div>
+
+            <hr>
+
+            <div class="company">
+                <img src="http://www.guclucadir.com.tr/images/guclu-logo-tr.png" width="50" class="rounded-circle mr-3">
+                <a href="#" class="text-white">Guclu Tent Co.</a>
+            </div>
+
+            <hr>
+
+            <ul class="sidebar-list">
+
+                <li class="sidebar-list-item">
+                    <a href="#" onclick="dropdownHeader()">
+                        <i class="fas fa-heading mr-3"></i>Header
+                    </a>
+                    <div class="dropdown-header">
+                        <a href="/GucluAdmin/ContactConfig" class="drop-list"><i class="fas fa-th-large mr-3"></i>Information</a>
+                        <a href="/GucluAdmin/HomeSlider" class="drop-list"><i class="fas fa-th-large mr-3"></i>Slider</a>
+                    </div>
+                </li>
+
+                <li class="sidebar-list-item">
+
+                    <a href="#" type="button" onclick="dropdownProduct()"><i class="fas fa-th-large mr-3"></i>Products</a>
+
+                    <div class="dropdown-products">
+                        <a href="/GucluAdmin/ProductList" class="drop-list"><i class="fas fa-th-large mr-3"></i>Product List</a>
+                        <a href="/GucluAdmin/AddProduct" class="drop-list"><i class="fas fa-th-large mr-3"></i> Add Product</a>
+                    </div>
+                </li>
+
+                <li class="sidebar-list-item">
+                    <a href="/GucluAdmin/HumanResource" class="">
+                        <i class="fas fa-user mr-3"></i>Human Resources
+                    </a>
+                </li>
+
+                <li class="sidebar-list-item">
+                    <a href="/GucluAdmin/Users" class="">
+                        <i class="fas fa-info-circle mr-3"></i>Users
+                    </a>
+                </li>
+
+                <li class="sidebar-list-item">
+                    <a href="/GucluAdmin/ContactList" class="">
+                        <i class="fas fa-address-card mr-3"></i>Contact 
+                    </a>
+                </li>
+
+
+
+            </ul>
+        </nav>
+        <!------------------------------------<hamburger>------------------------------------>
+
+
+        <div id="hamburger-sidebar" class="hamburger-menu">
+
+
+            <div class="exit">
+                <button type="button" class="btn btn-danger" id="exit-button"><i class="fas fa-times"></i></button>
+            </div>
+
+            <ul class="sidebar-list">
+
+                <li class="sidebar-list-item">
+                    <a href="#" onclick="dropdownHeader()">
+                        <i class="fas fa-heading mr-3"></i>Header
+                    </a>
+                    <div class="dropdown-header">
+                        <a href="/GucluAdmin/ContactConfig" class="drop-list"><i class="fas fa-th-large mr-3"></i>Information</a>
+                        <a href="/GucluAdmin/HomeSlider" class="drop-list"><i class="fas fa-th-large mr-3"></i>Slider</a>
+                    </div>
+                </li>
+
+                <li class="sidebar-list-item">
+
+                    <a href="#" type="button" onclick="dropdownProduct()"><i class="fas fa-th-large mr-3"></i>Products</a>
+
+                    <div class="dropdown-products">
+                        <a href="/GucluAdmin/ProductList" class="drop-list"><i class="fas fa-th-large mr-3"></i>Product List</a>
+                        <a href="/GucluAdmin/AddProduct" class="drop-list"><i class="fas fa-th-large mr-3"></i> Add Product</a>
+                    </div>
+                </li>
+
+                <li class="sidebar-list-item">
+                    <a href="/GucluAdmin/HumanResource" class="">
+                        <i class="fas fa-user mr-3"></i>Human Resources
+                    </a>
+                </li>
+
+                <li class="sidebar-list-item">
+                    <a href="/GucluAdmin/Users" class="">
+                        <i class="fas fa-info-circle mr-3"></i>Users
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+        <!------------------------------------</hamburger>------------------------------------>
+        <!------------------------------------------</sidebar>----------------------------------------->
+        <div class="wrapper">
+
+            <!----------------------------------------<header>---------------------------------------------->
+
+            <header class="top-navbar">
+                <div class="hamburger-icon" id="hamburger">
+                    <button type="button" class="btn btn-danger" id="hamburger-button"><i class="fas fa-bars"></i></button>
+                </div>
+
+                <div class="company-top">
+                    <img src="http://www.guclucadir.com.tr/images/guclu-logo-tr.png" class="mr-3">
+                </div>
+
+                <a href="#" class="nav-link" data-toggle="modal" data-target="#sign-out"><i class="fas fa-sign-out-alt"></i></a>
+
+
+                <!----------------------------------<log-out modal> -------------------------->
+
+                <div class="modal fade" id="sign-out">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Want to leave?</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                Press logout to leave
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Stay Here</button>
+                                <a href="/GucluAdmin/Logout" class="btn btn-danger" data-dismiss="modal">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------------------------- </log-out modal> -------------------------->
+            </header>
+
+            <!---------------------------------------</header>------------------------------------------>
+            <!------------------------------------------<content>----------------------------------------->
+
+            <section class="content">
+                @RenderBody()
+            </section>
+
+
+
+        </div>
+    </div>
+
+    <!-----------------------------<scripts>------------------------------>
+
+    <script src="/Scripts/js/jupiter.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>

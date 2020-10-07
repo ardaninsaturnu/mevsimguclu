@@ -1,0 +1,84 @@
+﻿@using companyproject.Entities
+@model List<product_type>
+
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Products</li>
+    </ol>
+</nav>
+
+@{Html.RenderAction("IndexSlider", "Home"); }
+<section class="products-title">
+    <div class="title-text">
+        <h2>Think Different</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, voluptatibus?</p>
+    </div>
+
+    <div class="title-box-container">
+        <div class="title-box">
+            <h5>Expertise & Relability</h5>
+            <p>Our customers trust us, valuing our expertise and quality products.</p>
+        </div>
+        <div class="title-box">
+            <h5>
+                Successful as a team
+            </h5>
+            <p>
+                Our skilled, committed and responsible staff creates top quality products and provide outstanding services based on our years of experience.
+            </p>
+        </div>
+        <div class="title-box">
+            <h5>Quality leadership since 1966</h5>
+            <p>We are recognized as industry quality leaders. We are a versatile and sustainable company founded in 1875! Our value chain is unique, and ranges from the fiber through the textile constructions.</p>
+        </div>
+    </div>
+
+</section>
+<!------------------------------product component---------------------------->
+
+
+
+<section class="products-wrapper">
+
+
+    @if (Model != null && Model.Count > 0)
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+            <div class="col-xl-6 col-lg-12 col-sm-12">
+                <div class="product-components">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="p-image-wrap">
+                                <img src="@item.productPhotoPath" class="products-image" alt="@item.product_type_name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="product-paragraph">
+                                <h4>@item.product_type_name</h4>
+                                <hr>
+                                <p>@item.productNameSub</p>
+                                <a href="/Home/productDetail?Id=@item.Id">Read More <i class="fas fa-angle-right"></i></a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            }
+        </div>
+    }
+
+
+</section>
+

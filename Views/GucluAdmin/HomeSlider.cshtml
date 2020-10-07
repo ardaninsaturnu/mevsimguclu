@@ -1,0 +1,100 @@
+﻿@using companyproject.ViewModels
+@model HPSliderViewModel
+@{
+    ViewBag.Title = "HomeSlider";
+    Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
+}
+
+
+@{
+    bool sliderCheck = false;
+    List<companyproject.Entities.index_slider> sliderList = new List<companyproject.Entities.index_slider>();
+    if (ViewData["sliderList"] != null)
+    {
+        sliderCheck = true;
+        sliderList = ViewData["sliderList"] as List<companyproject.Entities.index_slider>;
+    }
+}
+
+@if (sliderCheck == true)
+{
+    <div class="slider">
+
+        <h4>Slider List</h4>
+        <hr>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Slider View
+                    </th>
+                    <th>
+                        Slider Path
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in sliderList)
+                {
+                    <tr>
+                        <td>
+                            <img src="@item.file_path" width="40px" height="40px" />
+                        </td>
+                        <td>
+                            @item.file_path
+                        </td>
+                        <td>
+                            <button class="btn btn-warning SlideDelete" type="button" data-del-id="@item.path_id"> Delete</button>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+}
+
+<div class="slider">
+    <h4>Slider Edition</h4>
+    <hr>
+    @using (Html.BeginForm("HomeSlider", "GucluAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        if (!Html.ViewData.ModelState.IsValid)
+        {
+            <div class="col-md-12">
+                <p class="alert alert-danger">@Html.ValidationSummary()</p>
+            </div>
+        }
+        if (TempData["slideError"] != null)
+        {
+            <div class="col-md-12">
+                <p class="alert alert-danger">
+                    @TempData["slideError"]
+                </p>
+            </div>
+        }
+        if (TempData["slideSuccess"] != null)
+        {
+            <div class="col-md-12">
+                <p class="alert alert-success">
+                    @TempData["slideSuccess"]
+                </p>
+            </div>
+        }
+        <div class="slider-box">
+            <input type="file" name="slider1" id="slider1">
+            @Html.TextBoxFor(x => x.title, new { name = "titleone", id = "titleone", placeholder = "title" })
+            @Html.TextBoxFor(x => x.subtitle, new { name = "textthree", id = "textthree", placeholder = "subtitle" })
+
+        </div>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i>Add Slider</button>
+    }
+
+
+</div>
+
+
+<script src="~/Scripts/js/sliderControl.js"></script>

@@ -1,0 +1,220 @@
+﻿@using companyproject.Entities
+@model product_type
+
+@{
+    ViewBag.Title = "EditProduct";
+    Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
+}
+
+@{
+    List<product_slider> sliderList = new List<product_slider>();
+    List<product_size> sizeList = new List<product_size>();
+    if (Model != null)
+    {
+        sliderList = Model.Product_Slider;
+        sizeList = Model.Product_Size;
+    }
+}
+
+
+@if (Model != null)
+{
+
+    using (Html.BeginForm())
+    {
+        @Html.HiddenFor(x => x.Id)
+        <main class="addProductPage">
+            <!------------------------------
+                --------------------add product--------------------------------------------->
+            <div class="form-wrapper">
+                @if (!Html.ViewData.ModelState.IsValid)
+                {
+                    <div class="warning warning">
+                        <p>@Html.ValidationSummary()</p>
+                    </div>
+                }
+                @if (TempData["error"] != null)
+                {
+                    <div class="col-md-12">
+                        <p class="alert alert-danger">
+                            @TempData["error"]
+                        </p>
+                    </div>
+                }
+                @if (TempData["success"] != null)
+                {
+                    <div class="col-md-12">
+                        <p class=" alert alert-success">
+                            @TempData["success"]
+                        </p>
+                    </div>
+                }
+                <!----------------title and description------------->
+                <h5>Title and Description</h5>
+                <hr>
+
+                <label for="">
+                    Title :
+                    @Html.TextBoxFor(x => x.product_type_name, new { name = "title", placeholder = "title" })
+                </label>
+
+                <label for="">
+                    Description :
+                    @Html.TextAreaFor(x => x.productNameSub, new { name = "description", placeholder = "description", cols = "10", rows = "5" })
+                </label>
+            </div>
+
+
+            <!----------------image slider------------------------>
+
+
+            <div class="form-wrapper">
+                <h5>Image Slider</h5>
+                @*@if (sliderList.Count < 3)
+                {
+                    <label for="imageOne">
+
+                        <input type="file" name="imageOneTitle" id="imagePh" />
+                        <input type="text" name="title" id="titlePh" placeholder="title" />
+                        <input type="text" name="subtitle" id="subtitlePh" placeholder="subtitle" />
+                    </label>
+                    <div class="row">
+                        <div class="col-md-4 offset-md-4">
+                            <button type="button" class="btn btn-primary addSlider" data-product-id="@Model.Id"> add new slide</button>
+                        </div>
+                    </div>
+
+                }*@
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+
+                            </th>
+                            <th>
+                                Title
+                            </th>
+                            <th>
+                                Subtitle
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in sliderList)
+                        {
+
+                            <tr>
+                                <td>
+                                    <img width="40px" height="40px" src="@item.file_path" />
+                                </td>
+                                <td>
+                                    @item.title
+                                </td>
+                                <td>
+                                    @item.subtitle
+                                </td>
+                                <td>
+                                    <button class="btn btn-warning btn-sm deleteSlide" type="button" data-slide-id="@item.Id" data-product-id="@Model.Id"> Delete</button>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+                <hr>
+
+
+            </div>
+
+
+            <!-----------------product info------------------------------>
+
+
+            <div class="form-wrapper">
+                <h5>Product Information</h5>
+                <hr>
+                <label for="">
+                    usages of areas
+                    @Html.TextBoxFor(x => x.usage_areas, new { name = "title", id = "title", placeholder = "title" })
+                </label>
+                <label for="">
+                    sizes
+                    @Html.TextBoxFor(x => x.measures, new { name = "title", id = "title", placeholder = "title" })
+                </label>
+                <label for="">
+                    product molecul
+                    @Html.TextBoxFor(x => x.product_materials, new { name = "title", id = "title", placeholder = "title" })
+                </label>
+            </div>
+
+
+
+            <div class="form-wrapper">
+
+                <h5>Product Sizes</h5>
+                <hr>
+                @foreach (var item in sizeList)
+                {
+                    <div class="sizes-box">
+                        <label for="">
+                            Products Codes
+                            @Html.TextBoxFor(x => item.productCode, new { name = "title", id = "title", placeholder = "title", type = "text", disabled = "disabled" })
+                        </label>
+                        <label for="">
+                            With
+                            @Html.TextBoxFor(x => item.width, new { name = "title", id = "title", placeholder = "title", type = "number", disabled = "disabled" })
+                        </label>
+                        <label for="">
+                            Length
+                            @Html.TextBoxFor(x => item.lenght, new { name = "title", id = "title", placeholder = "title", disabled = "disabled" })
+                        </label>
+                        <label for="">
+                            Height
+                            @Html.TextBoxFor(x => item.height, new { name = "title", id = "title", placeholder = "title", disabled = "disabled" })
+                        </label>
+                        <button type="button" class="btn btn-warning btn-sm sizeDelete" data-size-id="@item.Id" data-product-id="@Model.Id"> delete</button>
+                    </div>
+                }
+
+                <div class="sizes-box">
+                    <label for="">
+                        Products Codes
+                        <input type="text" name="title" id="productCode" placeholder="title" aria-placeholder="">
+                    </label>
+                    <label for="">
+                        With
+                        <input type="number" name="title" id="with" placeholder="title" aria-placeholder="">
+                    </label>
+                    <label for="">
+                        Length
+                        <input type="text" name="title" id="Length" placeholder="title" aria-placeholder="">
+                    </label>
+                    <label for="">
+                        Height
+                        <input type="text" name="title" id="height" placeholder="title" aria-placeholder="">
+                    </label>
+                    <button type="button" class="btn btn-warning btn-sm addSize" data-product-id="@Model.Id"><i class="fas fa-plus ml-auto mr-auto"></i></button>
+                </div>
+
+                <button type="submit" value="Update" class="updateButton"><i class="fas fa-reply mr-3"></i>Update</button>
+
+
+            </div>
+
+        </main>
+    }
+}
+else
+{
+    <div class="col-md-12">
+        <p class=" alert alert-info">
+            Product not found
+        </p>
+    </div>
+}
+
+
+<script src="~/Scripts/js/sliderControl.js"></script>

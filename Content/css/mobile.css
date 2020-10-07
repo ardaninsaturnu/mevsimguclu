@@ -1,0 +1,129 @@
+
+html,body>* {
+    font-size: 10px;
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+
+
+
+/*--------------mobile ----------------------*/
+
+
+.language-tablet-content {
+    top: 5.8rem;
+}
+
+.language-tablet .language-tablet-button {
+    font-size: 0.8rem;
+}
+
+.hamburger-wrapper{
+    overflow: hidden;
+}
+
+.hamburger-wrapper span {
+    font-size: 2rem;
+}
+
+.shop-button {
+    margin: 0 auto;
+    width: 80%;
+}
+
+
+.home-component {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    padding:0;
+}
+
+.home-component:nth-of-type(2){
+    flex-direction: column-reverse !important;
+}
+
+
+
+.home-image {
+    display:flex;
+    justify-content: center;
+}
+
+.home-image img {
+    width: 50% !important;
+}
+
+.home-image:nth-child(2) {
+    display: flex;
+    justify-content: center;
+}
+
+.home-component .home-image,.home-text {
+    width: 85%;
+    margin: 1rem;
+}
+
+.home h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem;
+    color: rgb(143, 143, 143);
+}
+
+
+
+
+
+
+
+
+/*----------------------------------------------------------about us ---------------------------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------------------products-----------------------------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------------------product-----------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------human resources---------------------------------------------------------------------*/
+
+.form-title-img img {
+    width: inherit;
+
+}
+
+.form-title-text {
+    justify-content: center;
+}
+
+.form-title-text h3 {
+    font-size: initial;
+}
+
+
+/*----------------------------------------------------contact-----------------------------------------------------------*/
+
+.contact-left,.contact-right {
+    width: 90% !important;
+    margin: 1rem;
+}
+
+.contact-title h2 {
+    font-size: 1.5rem;
+}
+
+.contact-title p {
+    padding: 0 6rem;
+}
+

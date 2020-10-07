@@ -1,0 +1,182 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    @*<title>@ViewBag.Title</title>*@
+    <title>Guclu Cadır</title>
+    <!-------------------------google-fonts------------------->
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-----------------------font awesome--------------------->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+    <!-----------------------bootstrap-cdn-------------------->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!---------------------for desktop style------------------->
+
+    <link href="/Content/css/style.css" rel="stylesheet" />
+
+    <!---------------------for animate.css--------------------->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
+    <!---------------------for book----------------------------->
+
+
+    <link href="/Content/css/book.css" media="(max-width:1366px)" rel="stylesheet" />
+
+    <!--------------------for tablet--------------------------->
+
+
+    <link href="/Content/css/tablet.css" media="(max-width:768px)" rel="stylesheet" />
+
+    <!--------------------for mobile--------------------------->
+
+
+    <link href="/Content/css/mobile.css" media="(max-width:500px)" rel="stylesheet" />
+
+
+</head>
+<body>
+    <!------------------------------preeloader------------------------------>
+
+    <div class="loader-box" id="spinner">
+        <div class="loader"></div>
+    </div>
+    <!---------------------------header explain----------------------------->
+    <div class="info-header">
+        @{Html.RenderAction("ContactInfo", "Home");}
+
+    </div>
+    <!---------------------------header explain----------------------------->
+    <div class="wrapper-header">
+        <header class="header">
+            <!-----------------hamburger menu------------------>
+
+            <div class="hamburger-wrapper">
+                <div id="myNav" class="hamburger">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="hamburger-content">
+                        <a href="/home">Home</a>
+                        <a href="/home/aboutus">About Us</a>
+                        <a href="/home/products">Products</a>
+                        <a href="/home/humanresources">Human Resources</a>
+                        <a href="/home/contact">Contact</a>
+                        <a href="" class="shop-button">Go Shopping</a>
+                    </div>
+                </div>
+                <span onclick="openNav()">&#9776;</span>
+            </div>
+
+
+
+            <!-----------------logo------------------>
+
+            <div class="logo animate__animated animate__slideInLeft">
+                <img src="~/images/guclu-logo-tr.png" alt="">
+            </div>
+
+            <nav class="navbar-menu animate_animated animate__slideInRight">
+                <a href="/home">Home</a>
+                <a href="/home/aboutus">About Us</a>
+                <a href="/home/products">Products</a>
+                <a href="/home/humanresources">Human Resources</a>
+                <a href="/home/contact">Contact</a>
+                <a href="" class="shop-button">Go Shopping</a>
+            </nav>
+
+            <div class="language-tablet tablet">
+                <button class="language-tablet-button">
+                    <i class="fas fa-globe-americas"></i>        Language
+                    <i class="fas fa-angle-down"></i>
+                </button>
+                <div class="language-tablet-content">
+                    <a href="#"><img src="/images/turkey.png" alt="">Türkçe</a>
+                    <a href="#"><img src="/images/england.png" alt="">İngilizce</a>
+
+                </div>
+            </div>
+
+
+        </header>
+    </div>
+    @RenderBody()
+    <footer class="footer">
+        <div class="footer-content">
+
+            <!----------footer info---------->
+            <div class="footer-section about">
+                <img src="../../images/guclu-logo-tr.png" alt="">
+                <br>
+                <p>Guclu Cadir Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptas. Lorem ipsum dolor sit amet. </p>
+                @{Html.RenderAction("ContactFooter", "Home");}
+
+            </div>
+
+            <!-------footer links area----------->
+            <div class="footer-section links">
+                <div class="linkhover-wrap">
+                    <h4>Quick Links</h4>
+                    <hr>
+                    <ul class="linkhover">
+                        <li><a href="/Home/AboutUs">About Us</a></li>
+                        <li><a href="">Shopping</a></li>
+                        <li><a href="">Products</a></li>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">Privacy</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="social-wrapper">
+                    <h4>Social Media</h4>
+                    <hr>
+                    <ul class="social">
+                        <li><a href="www.twitter.com" target="_blank" class="twitter"><i class="fab fa-twitter"></i>Twitter</a></li>
+                        <li><a href="www.facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook"></i>Facebook</a></li>
+                        <li><a href="www.youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i>Youtube</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!------footer contact form--------->
+            <div class="footer-section footer-form">
+                <h4>Contact Us</h4>
+                <hr>
+                <form action="">
+                    <input type="text" id="fullname" placeholder="full name">
+                    <input type="text" id="mailadres" placeholder="mail">
+                    <textarea name="footer-message" id="footer-message" cols="30" rows="5" placeholder="Mesajınızı Yazınız.."></textarea>
+                    <input type="button" class="send" value="Send">
+                </form>
+            </div>
+        </div>
+
+        <!----------footer bottom----------->
+        <div class="footer-bottom">
+            &copy; 2020 <a href="https://www.workuptogether.com/" target="_blank">www.workuptogether.com</a> Designed by ardaninsaturnu
+        </div>
+    </footer>
+
+    <!----------------------bootstrap jquery------------------->
+
+
+
+    <script src="/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="/Scripts/popper.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+
+    <!------------------------js dosyaları-------------------->
+    <script src="/Scripts/js/saturn.js"></script>
+    <script src="/Scripts/js/footerContact.js"></script>
+
+</body>
+
+
+</html>

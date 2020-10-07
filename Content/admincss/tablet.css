@@ -1,0 +1,136 @@
+
+.wrapper {
+    margin: 0;
+}
+
+
+
+/*-----------------------------------------<login>-------------------------------------------------*/
+
+.login .login-left {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-left img {
+    width: 85%;
+}
+
+
+.login-logo img {
+    width: 20%;
+}
+
+
+.login .login-right {
+    width: 100%;
+}
+
+
+.login-right form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+.login-footer p {
+    margin-bottom: 0rem;
+}
+
+
+
+
+/*-------------------------------<sidebar>------------------------------*/
+
+.hamburger-menu {
+    display: flex;
+    height: 0%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    z-index: 99;
+    background-color: black;
+    flex-direction: column;
+}
+
+.sidebar {
+    display: none;
+}
+
+
+.hamburger-menu .exit {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.dropdown-header, .dropdown-products {
+    margin-left: 16rem;
+    padding: 1rem;
+}
+
+
+
+.logo {
+    width: 20%;
+}
+
+
+.sidebar-list-item {
+    text-align: center;
+}
+
+/*------------------------------<header>--------------------------------*/
+
+.top-navbar {
+    justify-content: space-between;
+}
+
+.company-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+    .company-top a img {
+        width: 50%;
+    }
+
+.hamburger-icon {
+    display: block;
+    color: gold;
+}
+
+/*------------------------------</header>--------------------------------*/
+
+
+/*------------------------------<content>--------------------------------*/
+
+.content {
+    margin: 0;
+    margin-top:10%;
+}
+
+
+.infoheader {
+    width: 100%;
+}
+
+
+    .infoheader .form-wrapper label {
+        width: 70%;
+    }
+
+/*------------------------------</content>--------------------------------*/
+
+
+.addProductPage .form-wrapper label {
+    width:100%;
+}
+

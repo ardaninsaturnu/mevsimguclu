@@ -1,0 +1,148 @@
+﻿@using companyproject.ViewModels
+@model AddProductViewModel
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
+}
+
+@using (Html.BeginForm("AddProduct", "GucluAdmin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <main class="addProductPage">
+        @if (!Html.ViewData.ModelState.IsValid)
+        {
+        <div class="alert alert-danger">
+            <p>@Html.ValidationSummary()</p>
+        </div>
+        }
+        @if (TempData["productAddSuccess"] != null)
+        {
+            <div class="col-md-12">
+                <p class="alert alert-success">@TempData["productAddSuccess"]</p>
+            </div>
+        }
+        @if (TempData["sliderError"] != null)
+        {
+            <div class="col-md-12">
+                <p class="alert alert-danger">
+                    @TempData["sliderError"]
+                </p>
+            </div>
+        }
+
+        <!--------------------------------------------------add product--------------------------------------------->
+        <!----------------title and description------------->
+
+        <div class="form-wrapper">
+        <h5>Title and Description</h5>
+        <hr>
+        
+            <label for="">
+                Title :
+                @Html.TextBoxFor(x => x.title, new { name = "title", placeholder = "title" })
+            </label>
+
+            <label for="">
+                Description :
+                @Html.TextAreaFor(x => x.Description, new { name = "description", placeholder = "description", cols = "10", rows = "5" })
+            </label>
+            <label for="productPhoto">
+
+                <input type="file" name="productPhoto" id="productPhoto">
+            </label>
+        </div>
+
+
+
+        <!----------------image slider------------------------>
+
+        <div class="form-wrapper">
+            <h5>Image Slider</h5>
+            <hr>
+            <label for="imageOne">
+
+                <input type="file" name="imageOneTitle" id="imageOneTitle">
+                @Html.TextBoxFor(x => x.title, new { name = "imageOne", id = "imageOne", placeholder = "imageOneTitle" })
+                @Html.TextBoxFor(x => x.SubTitle, new { name = "imageOne", id = "imageOne", placeholder = "imageOneTitle" })
+
+            </label>
+            <label for="imageOne">
+
+                <input type="file" name="imageTwoTitle" id="imageTwoTitle">
+                @Html.TextBoxFor(x => x.title1, new { name = "imageTwo", id = "imageTwo", placeholder = "Image Title" })
+                @Html.TextBoxFor(x => x.subtittle1, new { name = "imageTwo", id = "imageTwo", placeholder = "Image Title" })
+
+
+            </label>
+            <label for="imageOne">
+                <input type="file" name="imageThreeTitle" id="imageThreeTitle">
+                @Html.TextBoxFor(x => x.title2, new { name = "imageThree", id = "imageThree", placeholder = "Image Title" })
+                @Html.TextBoxFor(x => x.subtitle2, new { name = "imageThree", id = "imageThree", placeholder = "Image Title" })
+
+            </label>
+        </div>
+
+
+
+
+
+        <!-----------------product info------------------------------>
+        <div class="form-wrapper">
+            <h5>Product Information</h5>
+            <hr>
+            <label for="">
+                usages of areas
+                @Html.TextBoxFor(x => x.usageareas, new { name = "title", id = "title", placeholder = "title" })
+
+            </label>
+            <label for="">
+                sizes
+                @Html.TextBoxFor(x => x.sizes, new { name = "title", id = "title", placeholder = "title" })
+            </label>
+            <label for="">
+                product molecul
+                @Html.TextBoxFor(x => x.productmolecul, new { name = "title", id = "title", placeholder = "title" })
+
+            </label>
+        </div>
+
+
+
+
+
+
+
+        <div class="form-wrapper">
+            <h5>Product Sizes</h5>
+            <hr>
+
+            <label for="">
+                Products Codes
+                @Html.TextBoxFor(x => x.productCode, new { name = "title", id = "title", placeholder = "title" })
+            </label>
+            <label for="">
+                With
+                @Html.TextBoxFor(x => x.With, new { name = "title", id = "title", placeholder = "title", type = "number" })
+            </label>
+            <label for="">
+                Length
+                @Html.TextBoxFor(x => x.Lenght, new { name = "title", id = "title", placeholder = "title" })
+
+            </label>
+            <label for="">
+                Height
+                @Html.TextBoxFor(x => x.Height, new { name = "title", id = "title", placeholder = "title" })
+            </label>
+
+        </div>
+
+
+
+        <button type="submit" value="Add" class="addButton"><i class="fas fa-plus"></i> Add</button>
+
+
+
+    </main>
+}
+
+
+

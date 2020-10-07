@@ -1,0 +1,155 @@
+html {
+    font-size: 10px;
+}
+
+html,body,.wrapper-header,.header {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+
+.header {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header>* {
+    padding: 2rem 1rem;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+.hamburger-wrapper {
+    display: block;
+    width: 33%;
+}
+
+.shop-button {
+    margin: 0 auto;
+    width: 80%;
+}
+
+
+.navbar-menu {
+    display: none;
+}
+
+.info-header {
+    display: none;
+}
+
+.tablet {
+    display: flex !important;
+    width: 33%;
+    justify-content: flex-end;
+
+}
+
+
+.logo {
+    width: 33%;
+}
+
+.language-tablet {
+    overflow: hidden;
+  }
+  
+  .language-tablet .language-tablet-button {
+    font-size: 1rem;  
+    border: none;
+    outline: none;
+    color: #c4c4c4;
+    padding: 0.8rem 1rem;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+
+  .language-tablet-button i {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+  }
+  
+  .navbar a:hover, .language-tablet:hover .language-tablet-button {
+    background-color: #E3000F;
+  }
+  
+  .language-tablet-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 10rem;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 8rem;
+  }
+
+  .language-tablet-content img {
+      padding-right: 0.5rem;
+  }
+  
+  .language-tablet-content a {
+    float: none;
+    color: black;
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .language-tablet-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .language-tablet:hover .language-tablet-content {
+    display: block;
+  }
+/*-------------------------------------------index page style for tablet--------------------------------------*/
+
+
+
+
+
+/*----------------------------------------------------------about us ---------------------------------------------------------------------*/
+
+
+
+
+/*----------------------------------------------------------products-----------------------------------------------------------------------*/
+
+.color-box {
+    width: 40%;
+}
+
+
+/*---------------------------------------------------------single product------------------------------------------------------------------*/
+
+
+
+/*------------------------------------------------------human resources------------------------------------------------------------------*/
+
+.form-title-text {
+    justify-content: center;
+}
+
+
+/*----------------------------------------------------------contact--------------------------------------------------*/
+
+
+.contact {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-left,.contact-right {
+    width: 70% !important;
+    margin: 1rem;
+}
+
+
+
+/*----------------------------------------------------------------footer-----------------------------------------------------------------*/

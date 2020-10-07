@@ -1,0 +1,47 @@
+﻿@using companyproject.ViewModels
+@model ContactViewModel
+@{
+    ViewBag.Title = "ContactConfig";
+    Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
+}
+
+<div class="infoheader">
+    <h4>Info Edition</h4>
+    <hr>
+    @using (Html.BeginForm())
+    {
+        if (ViewBag.Success != null)
+        {
+            <div class="col-md-12">
+                <p class="alert alert-success">@ViewBag.Success</p>
+            </div>
+        }
+        if (!Html.ViewData.ModelState.IsValid)
+        {
+            <div class="warning warning">
+                <p>@Html.ValidationSummary()</p>
+            </div>
+        }
+
+        <div class="form-wrapper">
+            <label for="mail">
+            Mail:
+            @Html.TextBoxFor(x=> x.mail, new { type="email",name="mail",id="infomail",placeholder="@gmail.com"})
+        </label>
+
+        <label for="phone">
+            Phone:
+            @Html.TextBoxFor(x=> x.phone,new { name="phone",id="infophone",placeholder="5** *** ** **"})
+        </label>
+
+        <label for="adress">
+            Adress:
+            @Html.TextAreaFor(x=> x.address,new { name = "adress", id = "infoadress", placeholder = "adress", cols = "30", rows = "10" })
+        </label>
+        <button class="btn btn-primary" type="submit">Update Contact Information</button>
+        </div>
+        
+    }
+
+</div>
+

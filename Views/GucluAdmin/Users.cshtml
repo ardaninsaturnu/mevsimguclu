@@ -1,0 +1,107 @@
+﻿@using companyproject.Entities
+@model admin_panel
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_LayoutAdminPanel.cshtml";
+}
+
+@{
+    bool userControl = false;
+    List<admin_panel> userList = new List<admin_panel>();
+    if (ViewData["userList"] != null)
+    {
+        userControl = true;
+        userList = ViewData["userList"] as List<admin_panel>;
+    }
+}
+
+@using (Html.BeginForm())
+{
+
+    if (TempData["addError"] != null)
+    {
+        <div class="col-md-12">
+            <p class="alert alert-danger">
+                @TempData["addError"]
+            </p>
+        </div>
+    }
+    if (TempData["addSuccess"] != null)
+    {
+        <div class="col-md-12">
+            <p class="alert alert-success">
+                @TempData["addSuccess"]
+            </p>
+        </div>
+    }
+    if (!Html.ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger">
+            <p>@Html.ValidationSummary()</p>
+        </div>
+    }
+
+    <h5>Create User</h5>
+
+    <hr>
+
+    <div class="user-box">
+        <label for="email">Username :</label>
+        @Html.TextBoxFor(x => x.user_name, new { name = "adminUsername", id = "adminEmail", placeholder = "username" })
+       
+    </div>
+
+    <div class="user-box">
+        <label for="email">E-mail :</label>
+        @Html.TextBoxFor(x => x.mail, new { name = "email", id = "adminEmail", placeholder = "email" })
+        
+    </div>
+
+    <div class="user-box">
+        <label for="username">Password :</label>
+        @Html.TextBoxFor(x => x.password, new { name = "password", id = "adminEmail", placeholder = "email", type = "password" })
+
+       
+    </div>
+    
+    <div class="user-box">
+        <button type="submit" class="addUserButton">Add User</button>
+    </div>
+
+
+}
+
+@if (userControl == true)
+{
+    <div class="userList" id="userlist">
+
+        <h4>User List</h4>
+
+        <table id="user-table" class="table table-hover text-center">
+            <thead>
+                <tr>
+                    <th>
+                        Username
+                    </th>
+                    <th>
+                        E-Mail
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+            </thead>
+            @foreach (var item in userList)
+            {
+                <tr><th>@item.user_name</th><th>@item.mail</th><th><button class="btn btn-warning deleteUser" data-user-id="@item.Id"> Delete</button></th></tr>
+
+            }
+            <tr>
+        </table>
+
+    </div>
+}
+
+
+
+<script src="~/Scripts/js/sliderControl.js"></script>

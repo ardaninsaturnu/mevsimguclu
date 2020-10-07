@@ -1,0 +1,99 @@
+﻿@using companyproject.ViewModels
+@model HPJobApplicationFormViewModel
+
+@{
+    ViewBag.Title = "HumanResources";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a>About Us</a></li>
+    </ol>
+</nav>
+
+<!------------------------------------------------human resources form------------------------------------------------>
+
+<div class="container">
+    <div class="form-container">
+        <div class="form-title">
+
+            <div class="form-title-text">
+                <h3 class="animate__animated animate__slideInLeft">
+                    Do You Want to Work
+                    With us ?
+                </h3>
+            </div>
+            <div class="form-title-img">
+                <img class="animate__animated animate__slideInRight" src="../icon/handtohand.svg" alt="form">
+            </div>
+        </div>
+        <div class="form-box">
+            @if (!Html.ViewData.ModelState.IsValid)
+            {
+                <div class="warning warning">
+                    <p>@Html.ValidationSummary()</p>
+                </div>
+            }
+            @if (TempData["success"] != null)
+            {
+                <div class="col-md-12">
+                    <p class="alert alert-success">
+                        @TempData["success"]
+                    </p>
+                </div>
+            }
+            @if (TempData["error"] != null)
+            {
+                <div class="col-md-12">
+                    <p class="alert alert-danger">
+                        @TempData["error"]
+                    </p>
+                </div>
+            }
+            @using (Html.BeginForm("HumanResources", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <label for="name">
+                    Name @Html.TextBoxFor(x => x.name, new { name = "name", id = "name" })
+                </label>
+
+                <label for="surname">
+                    Surname
+                    @Html.TextBoxFor(x => x.surname, new { name = "surname", id = "surname" })
+                </label>
+
+                <label for="birth">
+                    Birth Date
+                    @Html.TextBoxFor(x => x.birth_date, new { name = "birth", id = "birth", type = "date" })
+                </label>
+
+                <label for="phone">
+                    Phone
+                    @Html.TextBoxFor(x => x.phone, new { name = "phone", id = "phone" })
+                </label>
+
+                <label for="mail">
+                    E-Mail
+                    @Html.TextBoxFor(x => x.email, new { name = "mail", id = "mail", type = "email" })
+                </label>
+
+                <label for="position">
+                    Position
+                    @Html.TextBoxFor(x => x.position, new { name = "position", id = "position" })
+
+                </label>
+
+                <label for="cv" class="cv-label">
+                    <img src="../icon/upload.svg" alt="">Add CV
+                    <input type="file" name="cv" id="cv">
+                </label>
+
+                <input type="submit" value="Send" class="hr-button">
+
+            }
+
+        </div>
+    </div>
+</div>
+

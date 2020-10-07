@@ -1,0 +1,86 @@
+﻿@using companyproject.ViewModels
+@model companyproject.ViewModels.HPContactViewModel
+
+
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+    </ol>
+</nav>
+
+
+
+<div class="wrapper">
+    <div class="contact-title">
+        <h2>GÜÇLÜ ÇADIR YAPI SAN. ve TİC. LTD. ŞTİ.</h2>
+    </div>
+    <hr>
+    <section class="contact">
+        @{Html.RenderAction("ContactForm", "Home");}
+        <div class="contact-right animate__animated animate__slideInRight">
+            @if (!Html.ViewData.ModelState.IsValid)
+            {
+                <div class="warning warning">
+                    <p>@Html.ValidationSummary()</p>
+                </div>
+            }
+            @if (TempData["error"] != null)
+            {
+                <div class="col-md-12">
+                    <p class="alert alert-danger">
+                        @TempData["error"]
+                    </p>
+                </div>
+            }
+            @if (TempData["success"] != null)
+            {
+                <div class="col-md-12">
+                    <p class="alert alert-success">
+                        @TempData["success"]
+                    </p>
+                </div>
+            }
+            <h4>Get in Touch</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <hr>
+            @using (Html.BeginForm())
+            {
+                <label for="name">
+                    Full Name
+                    @Html.TextBoxFor(x => x.FullName, new { type = "text", name = "name", id = "name" })
+                </label>
+                <label for="mail">
+                    Mail
+                    @Html.TextBoxFor(x => x.MailAdress, new { type = "text", name = "mail", id = "name" })
+
+                </label>
+                <label for="phone">
+                    Phone Number
+                    @Html.TextBoxFor(x => x.PhoneNumber, new { type = "text", name = "phone", id = "phone" })
+
+                </label>
+                <label for="subject">
+                    Subject
+                    @Html.TextBoxFor(x => x.Subject, new { type = "text", name = "subject", id = "subject" })
+                </label>
+                <label for="message">
+                    Message
+                    @Html.TextAreaFor(x => x.Message, new { name = "message", id = "message", cols = "30", rows = "5" })
+                </label>
+                <button type="submit"><i class="far fa-paper-plane"></i> Send</button>
+
+
+            }
+
+        </div>
+    </section>
+
+
+</div>
+

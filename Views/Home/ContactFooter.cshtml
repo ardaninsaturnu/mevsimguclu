@@ -1,0 +1,31 @@
+﻿@using companyproject.Entities
+@model contact_info
+
+
+
+@if (Model != null)
+{
+    <span><i class="fas fa-phone-alt"></i>  @Model.phone</span>
+    <span>
+        <i class="far fa-envelope"></i>
+        @Model.mail
+    </span>
+    <span>
+        <i class="fas fa-map-marker-alt"></i>
+        @Model.address
+    </span>
+
+
+}
+else
+{
+    <span><i class="fas fa-phone-alt"></i>güncellenecek</span>
+    <span>
+        <i class="far fa-envelope"></i>
+        güncellenecek
+    </span>
+    <span>
+        <i class="fas fa-map-marker-alt"></i>
+        güncellenecek
+    </span>
+}

@@ -1,0 +1,34 @@
+html {
+    font-size: 10px;
+}
+
+/*-----------------------------------------<login>-------------------------------------------------*/
+
+.login {
+    overflow: scroll;
+}
+
+
+.login-logo img {
+    width: 30%;
+}
+
+
+.login-left img {
+    width: 100%;
+}
+
+
+
+.login-right form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.login-footer {
+    padding: 0.5rem;
+}
+
+    .login-footer p {
+        font-size: 0.7rem;
+    }

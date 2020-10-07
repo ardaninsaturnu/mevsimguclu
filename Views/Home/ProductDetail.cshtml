@@ -1,0 +1,296 @@
+﻿@using companyproject.Entities
+@model product_type
+
+@{
+    ViewBag.Title = "ProductDetail";
+    Layout = "/Views/Shared/_LayoutHomePage.cshtml";
+}
+
+@{ 
+    List<product_size> sizeList = new List<product_size>();
+    if (Model != null)
+    {
+        sizeList = Model.Product_Size;
+    }
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="./products.html">Products</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Product</li>
+    </ol>
+</nav>
+
+<div class="container">
+    <div class="product-title">
+        <h2>@Model.product_type_name</h2>
+
+        <p>@Model.productNameSub</p>
+        <hr>
+    </div>
+
+    <!-------------------------------product slider------------------------------->
+
+    <main class="slider">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                @for (int i = 0; i < Model.Product_Slider.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        <li data-target="#carouselExampleIndicators" data-slide-to="@(i+1)" class="active"></li>
+                    }
+                    else
+                    {
+                        <li data-target="#carouselExampleIndicators" data-slide-to="@(i+1)"></li>
+
+                    }
+                }
+
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <!-- Slide One - Set the background image for this slide in the line below -->
+                @for (int i = 0; i < Model.Product_Slider.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        <div class="carousel-item product-slider active" style="background-image: url('@Model.Product_Slider[i].file_path')">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2 class="display-4">@Model.Product_Slider[i].title</h2>
+                                <p class="lead">@Model.Product_Slider[i].subtitle</p>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="carousel-item product-slider" style="background-image: url('@Model.Product_Slider[i].file_path')">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h2 class="display-4">@Model.Product_Slider[i].title</h2>
+                                <p class="lead">@Model.Product_Slider[i].subtitle</p>
+                            </div>
+                        </div>
+                    }
+                }
+
+
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </main>
+
+    <section class="icon-container">
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="protect">
+                    <h4>Protect</h4>
+                    <hr>
+                    <div class="p-icons">
+                        <img src="../icon/koruma-gunes.png" alt="">
+                        <img src="../icon/koruma-kar.png" alt="">
+                        <img src="../icon/koruma-uv.png" alt="">
+                        <img src="../icon/koruma-yagmur.png" alt="">
+                        <img src="../icon/koruma-zip.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="material">
+                    <h4>Materials</h4>
+                    <hr>
+                    <div class="p-icons">
+                        <img src="../icon/materyal-alu.png" alt="">
+                        <img src="../icon/materyal-yanmaz.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="certification">
+                    <h4>Certifications</h4>
+                    <hr>
+                    <div class="p-icons">
+                        <img src="../icon/sertifika-2year.png" alt="">
+                        <img src="../icon/sertifika-ce.png" alt="">
+                        <img src="../icon/sertifika-patent.png" alt="">
+                        <img src="../icon/sertifika-tr.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+</div>
+<section class="p-components-wrapper">
+    <div class="p-components container">
+
+        <div class="product-single-components">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="@Model.productPhotoPath" class="products-image" alt="military" width="100%" height="300px">
+                </div>
+                <div class="col-md-6">
+                    <div class="p-product-paragraph">
+                        <h4>Product Information</h4>
+                        <hr>
+                        <div class="product-information">
+                            <strong>Kullanım Alanları:</strong>
+                            <p>@Model.usage_areas</p>
+                        </div>
+                        <div class="product-information">
+                            <strong>Ölçüler:</strong>
+                            <p>@Model.measures</p>
+                        </div>
+                        <div class="product-information">
+                            <strong>Ürün Birleşimi:</strong>
+                            <p>@Model.product_materials</p>
+
+                        </div>
+                        <span>
+
+                        </span>
+                        <span>
+
+                        </span>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="product-size-tables">
+            <h4>Product Sizes</h4>
+            <hr>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Product Codes</th>
+                        <th scope="col">Width</th>
+                        <th scope="col">Length</th>
+                        <th scope="col">Height</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in sizeList)
+                    {
+                        <tr>
+                            <th scope="row">@item.productCode</th>
+                            <td>@item.width</td>
+                            <td>@item.lenght</td>
+                            <td>@item.height</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+        <main class="colorschemes">
+            <h4>Colors</h4>
+            <hr>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="colors">
+
+                        <div class="color-box">
+                            <div class="colorpick pink"></div>
+                            <div class="color-text">
+                                <h5>Fairy Pink</h5>
+                                <p>#ff67b3</p>
+                            </div>
+
+                        </div>
+                        <div class="color-box">
+                            <div class="colorpick blue"></div>
+                            <div class="color-text">
+                                <h5>Ocean</h5>
+                                <p>#5c88ff</p>
+                            </div>
+                        </div>
+                        <div class="color-box">
+                            <div class="colorpick orange"></div>
+                            <div class="color-text">
+                                <h5>Light Salmon</h5>
+                                <p>#ffa07a</p>
+                            </div>
+                        </div>
+                        <div class="color-box">
+                            <div class="colorpick asia"></div>
+                            <div class="color-text">
+                                <h5>Asia </h5>
+                                <p>#ff67b3</p>
+                            </div>
+                        </div>
+                        <div class="color-box">
+                            <div class="colorpick duncan"></div>
+                            <div class="color-text">
+                                <h5>Green Dream</h5>
+                                <p>#ff67b3</p>
+                            </div>
+                        </div>
+                        <div class="color-box">
+                            <div class="colorpick gray"></div>
+                            <div class="color-text">
+                                <h5>Shadows</h5>
+                                <p>#ff67b3</p>
+                            </div>
+                        </div>
+                        <div class="color-box">
+                            <div class="colorpick purple"></div>
+                            <div class="color-text">
+                                <h5>Berry</h5>
+                                <p>#ff67b3</p>
+                            </div>
+                        </div>
+                        <div class="color-box">
+                            <div class="colorpick brick"></div>
+                            <div class="color-text">
+                                <h5>Brick</h5>
+                                <p>#ff67b3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pallette">
+                        <div class="card">
+                            <div class="card-body text-center d-flex justify-content-center align-items-center flex-column">
+                                <p>Change actual color and check how every color representation is described in the list</p>
+                                <button id="color-picker-6" class="btn btn-primary btn-sm">Color Picker</button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-body text-center d-flex justify-content-center align-items-center flex-column">
+                                <ul class="list-group list-group-flush w-100">
+                                    <li class="list-group-item" id="hex"></li>
+                                    <li class="list-group-item" id="rgba"></li>
+                                    <li class="list-group-item" id="hsla"></li>
+                                    <li class="list-group-item" id="hsva"></li>
+                                    <li class="list-group-item" id="cmyk"></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+
+</section>
+

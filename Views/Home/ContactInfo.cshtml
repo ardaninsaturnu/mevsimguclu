@@ -1,0 +1,66 @@
+﻿@using companyproject.Entities
+@model contact_info
+
+
+
+@if (Model != null)
+{
+    <div class="mail-info book-info">
+
+        <i class="far fa-envelope"></i>
+        @Model.mail
+
+
+    </div>
+    <div class="tel-info book-info">
+        <i class="fas fa-phone-alt"></i>  @Model.phone
+    </div>
+
+    <div class="adress-info book-info">
+        <i class="fas fa-map-marker-alt"></i>
+        @Model.address
+    </div>
+
+    <div class="language book-info">
+        <button class="language-button">
+            <i class="fas fa-globe-americas"></i>        Language
+            <i class="fas fa-angle-down"></i>
+        </button>
+        <div class="language-content">
+            <a href="#"><img src="/images/turkey.png" alt="">Türkçe</a>
+            <a href="#"><img src="/images/england.png" alt="">İngilizce</a>
+
+        </div>
+    </div>
+
+}
+else
+{
+    <div class="mail-info book-info">
+
+        <i class="far fa-envelope"></i>
+        güncellenecek
+
+
+    </div>
+    <div class="tel-info book-info">
+        <i class="fas fa-phone-alt"></i> güncellenecek
+    </div>
+
+    <div class="adress-info book-info">
+        <i class="fas fa-map-marker-alt"></i>
+        güncellenecek
+    </div>
+
+    <div class="language book-info">
+        <button class="language-button">
+            <i class="fas fa-globe-americas"></i>        Language
+            <i class="fas fa-angle-down"></i>
+        </button>
+        <div class="language-content">
+            <a href="#"><img src="/images/turkey.png" alt="">Türkçe</a>
+            <a href="#"><img src="/images/england.png" alt="">İngilizce</a>
+
+        </div>
+    </div>
+}
